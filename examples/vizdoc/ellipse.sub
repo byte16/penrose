@@ -1,0 +1,7 @@
+Ell A
+Rad rx
+Rad ry
+Point p
+
+AutoLabel A, rx, ry
+Label p $(x, y)$

@@ -1,0 +1,87 @@
+Colors {
+    Colors.black = rgba(0.0, 0.0, 0.0, 1.0)
+    Colors.none = rgba(0.0, 0.0, 0.0, 0.0)
+    Colors.gray = rgba(0.6, 0.6, 0.6, 1.0)
+    Colors.lightpurple = rgba(0.816,0.824, 0.902, 1.0)
+    Colors.lightgreen = rgba(0.718, 0.988, 0.584, 1.0)
+    Colors.red = rgba(1.0, 0.0, 0.0, 1.0)
+}
+
+Ell x {
+  x.shape = Ellipse {
+    strokeWidth : 2.0
+    strokeColor : Colors.gray
+    strokeStyle : "dashed"
+    x: 0.0
+    y: 0.0
+    rx: 100.0
+    ry: 1.5 * x.shape.rx
+    color: Colors.lightgreen
+  }
+}
+
+Box b {
+  b.shape = Rectangle {
+     strokeColor: Colors.black
+     color: Colors.none
+     strokeStyle : "solid"
+     x: -320.0
+     y: 100.0
+     w: 200.0
+     h: 100.0
+  }
+  b.text1 = Text {
+    string: "{strokeStyle: dashed}"
+    x: b.shape.x
+    y: b.shape.y
+  }
+}
+
+Point p 
+with Ell e {
+    p.shape = Circle{
+        x: e.shape.x
+        y: e.shape.x
+        r: 4.0
+        color: Colors.black
+    }
+    p.text = Text{
+    string: p.label
+    x : p.shape.x
+    y: p.shape.y - 20.0
+    }
+    LOCAL.layering = p.shape above e.shape
+    LOCAL.layering2 = p.text above e.shape
+}
+
+ Rad x
+ with Ell e {
+   x.shape = Line{
+     startX : e.shape.x
+     startY : e.shape.y
+     thickness : 2.0
+     color: Colors.red
+   }
+   x.text = Text{
+       string : x.label
+       rotation : 0.0
+   }
+   LOCAL.layering = x.shape above e.shape
+   LOCAL.layering2 = x.text above e.shape
+ }
+
+Rad `rx` 
+with Ell `A`{
+  override `rx`.shape.endX = `A`.shape.x + `A`.shape.rx
+  override `rx`.shape.endY = `A`.shape.y
+  override `rx`.text.x = `A`.shape.x + `A`.shape.rx / 2.0
+  override `rx`.text.y = `A`.shape.y + 15.0
+}
+
+Rad `ry` 
+with Ell `A`{
+  override `ry`.shape.endX = `A`.shape.x
+  override `ry`.shape.endY = `A`.shape.y + `A`.shape.ry
+  override `ry`.text.x = `A`.shape.x + 20.0
+  override `ry`.text.y = `A`.shape.y + `A`.shape.ry / 2.0
+}
