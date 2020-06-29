@@ -2,6 +2,7 @@ Ell A
 Rad rx
 Rad ry
 Point p
+Box B
 
-AutoLabel A, rx, ry
+AutoLabel A, rx, ry, B
 Label p $(x, y)$
