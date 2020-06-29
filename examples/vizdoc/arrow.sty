@@ -2,7 +2,7 @@ Colors {
     Colors.black = rgba(0.0, 0.0, 0.0, 1.0)
     Colors.none = rgba(0.0, 0.0, 0.0, 0.0)
     Colors.gray = rgba(0.6, 0.6, 0.6, 1.0)
-    Colors.lightblue = rgba(0.0, 0.0, 1.0, 1.0)
+    Colors.lightblue = rgba(0.549, 0.878, 1.0, 1.0)
     Colors.white = rgba(1.0, 1.0, 1.0, 1.0)
 }
 
@@ -10,14 +10,14 @@ Arrhead `C` {
     `C`.shape = Arrow {
         startX: -301.0
         endX: -300.0
-        startY: -150.0
+        startY: -200.0
         color: Colors.gray
-        endY: -150.0
+        endY: -200.0
         thickness: 10.0
     }
     `C`.box = Rectangle {
        x: -280.0
-       y: -150.0
+       y: -200.0
        color: Colors.none
        strokeColor: Colors.black
        strokeWidth: 1.0
@@ -69,14 +69,14 @@ Arrhead `D` {
     `D`.shape = Arrow {
         startX: 0.0
         endX: 1.0
-        startY: -150.0
+        startY: -200.0
         color: Colors.gray
-        endY: -150.0
+        endY: -200.0
         thickness: 10.0
     }
     `D`.box = Rectangle {
        x: 20.0
-       y: -150.0
+       y: -200.0
        color: Colors.none
        strokeColor: Colors.black
        strokeWidth: 1.0
@@ -92,16 +92,16 @@ with Arrhead `E`; Arrhead `D`{
         leftArrowhead : True
         rightArrowhead : True
         startX: `D`.box.x + 70.0
-        startY: -150.0
+        startY: -200.0
         endX: `E`.box.x - 70.0
-        endY: -150.0
+        endY: -200.0
         color: Colors.black
         thickness: 1.0
     }
     f.text = Text {
-        string : f.label
+        string : "\\text{arrowheadStyle}"
         x : f.shape.startX + 80.0
-        y : -135.0
+        y : -185.0
         fontSize: "9pt"
     }
 }
@@ -110,15 +110,15 @@ Arrhead `E` {
     `E`.shape = Arrow {
         startX: 320.0
         endX: 321.0
-        startY: -150.0
+        startY: -200.0
         color: Colors.gray
         arrowheadStyle: "arrowhead-1"
-        endY: -150.0
+        endY: -200.0
         thickness: 10.0
     }
     `E`.box = Rectangle {
        x: 320.0
-       y: -150.0
+       y: -200.0
        color: Colors.none
        strokeColor: Colors.black
        strokeWidth: 1.0

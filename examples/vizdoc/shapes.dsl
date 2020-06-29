@@ -8,3 +8,4 @@ type Sq
 type Arr
 type Arrhead
 type Lin
+type Txt

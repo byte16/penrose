@@ -13,6 +13,11 @@ export const objDict = {
     return distsq(center(s1), center(s2));
   },
 
+  near: ([t1, s1]: [string, any], [t2, s2]: [string, any]) => {
+    // TODO - TYPECHECK
+    return distsq(center(s1), center(s2));
+  },
+
   // Stella function for testing (TODO: Replace w/ most recent version)
   centerLabel: ([t1, arr]: [string, any], [t2, text1]: [string, any], w: number): Tensor => {
 
