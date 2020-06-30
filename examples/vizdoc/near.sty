@@ -16,15 +16,12 @@ Circ x {
   }
 }
 
+
 Circ `A` 
 with Circ `B`{
-  -- encourage sameCenter(`A`.shape, `B`.shape)
-    `B`.shape.r = 50.0
-    `A`.shape.r = 50.0
-    override `B`.shape.y = 0.0
-    override `A`.shape.y = 0.0
-    -- LOCAL.layering = `A`.shape above `B`.shape
+    encourage sameCenter(`A`.shape, `B`.shape)
+    `A`.layering = `A`.shape above `B`.shape
     override `B`.shape.color = Colors.red
-    encourage repel(`A`.shape, `B`.shape)
+    ensure smallerThan(`A`.shape, `B`.shape)
 }
 

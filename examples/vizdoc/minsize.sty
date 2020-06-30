@@ -1,0 +1,28 @@
+Colors {
+    Colors.black = rgba(0.0, 0.0, 0.0, 1.0)
+    Colors.none = rgba(0.0, 0.0, 0.0, 0.0)
+    Colors.gray = rgba(0.6, 0.6, 0.6, 1.0)
+    Colors.red = rgba(1.0, 0.0, 0.0, 1.0)
+    Colors.lightblue = rgba(0.580, 0.910, 1.0, 1.0)
+    Colors.darkblue = rgba(0.078, 0.255, 0.788, 1.0)
+}
+
+Arr x {
+  x.shape = Arrow {
+    thickness: 2.0
+    color: Colors.black
+  }
+  x.txt1 = Text{
+    string: "t1"
+    x: -100.0
+    y: 0.0
+  }
+  x.txt2 = Text{
+    string: "t2"
+    x: 150.0
+    y: 0.0
+  }
+  encourage centerArrow(x.shape, x.txt1, x.txt2)
+}
+
+

@@ -21,16 +21,6 @@ export const objDict = {
   // Stella function for testing (TODO: Replace w/ most recent version)
   centerLabel: ([t1, arr]: [string, any], [t2, text1]: [string, any], w: number): Tensor => {
 
-    // For debugging, TODO remove
-    console.log("t1, arr, w", t1, arr, w);
-    console.log(typeof (arr.startX.contents));
-    console.log(typeof (arr.startY.contents));
-    console.log(typeof (arr.endX.contents));
-    console.log(typeof (arr.endY.contents));
-    console.log(arr.startX.contents.dataSync()[0]);
-    console.log(arr.startY.contents.dataSync()[0]);
-    console.log(arr.endX.contents.dataSync()[0]);
-    console.log(arr.endY.contents.dataSync()[0]);
     // The tensors seem to have different disposed values, but their numeric values all seem to be available, so this is fine?
 
     if (typesAre([t1, t2], ["Arrow", "Text"])) {
@@ -171,6 +161,7 @@ const centerArrow2 = (arr: any, center1: Tensor, center2: Tensor, [o1, o2]: Tens
   let end = center2;
 
   // TODO: take in spacing, use the right text dimension/distance?, note on arrow directionality
+  // won't this always return true? greater returns an array of values
   if (norm(vec).greater(o1.add(abs(o2)))) {
     start = center1.add(o1.mul(dir));
     end = center2.add(o2.mul(dir));
