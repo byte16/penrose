@@ -9,3 +9,4 @@ type Arr
 type Arrhead
 type Lin
 type Txt
+type Img

@@ -19,7 +19,8 @@ Ell x {
   }
 }
 
-Box b {
+Box b 
+with Ell `A`{
   b.shape = Rectangle {
      strokeColor: Colors.black
      color: Colors.none
@@ -40,7 +41,7 @@ Box b {
       x : b.text0.x + b.text0.w / 2.0 + 17.0
       y: b.text0.y
       side : 20.0
-      color: Colors.lightgreen
+      color: `A`.shape.color
   }
   b.text1 = Text {
     -- string: "\\text{strokeStyle: }``\\text{dashed\"}"
@@ -53,8 +54,8 @@ Box b {
       startY : b.text1.y
       endX: b.shape.x + b.shape.w / 2.0 - 37.0
       endY: b.text1.y
-      style: "dashed"
-      color: Colors.black
+      style: `A`.shape.strokeStyle
+      color: `A`.shape.strokeColor
       thickness: 2.0
   }
   b.text2 = Text {
@@ -71,7 +72,7 @@ Box b {
       x : b.text3.x + b.text3.w / 2.0 + 17.0
       y: b.text3.y
       side : 20.0
-      color: Colors.gray
+      color: `A`.shape.strokeColor
   }
   b.sw = Line {
       startX: b.text2.x + b.text2.w / 2.0 + 5.0

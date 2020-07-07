@@ -13,15 +13,21 @@ Circ x {
     strokeColor : Colors.darkblue
     strokeStyle : "solid"
     color: Colors.lightblue
+    x: 0.0
+    r: 50.0
   }
 }
 
 
 Circ `A` 
 with Circ `B`{
-    encourage sameCenter(`A`.shape, `B`.shape)
-    `A`.layering = `A`.shape above `B`.shape
+  -- override `C`.shape.x = -400.0
+  -- override `B`.shape.x = 300.0
+  encourage sameCenter(`A`.shape, `B`.shape)
+  LOCAL.layering = `A`.shape above `B`.shape
     override `B`.shape.color = Colors.red
-    ensure smallerThan(`A`.shape, `B`.shape)
+  -- ensure smallerThan(`A`.shape, `B`.shape)
+  -- ensure minSize(`A`.shape)
+  --encourage above(`B`.shape, `C`.shape)
 }
 

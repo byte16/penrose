@@ -13,10 +13,10 @@ export const objDict = {
     return distsq(center(s1), center(s2));
   },
 
-  near: ([t1, s1]: [string, any], [t2, s2]: [string, any]) => {
-    // TODO - TYPECHECK
-    return distsq(center(s1), center(s2));
+  nearHead: ([t1, s1]: [string, any], [t2, s2]: [string, any]) => {
+    return distsq(center(s1), stack([s2.endX.contents.add(10.0), s2.endY.contents.add(10.0)]));
   },
+  // distsq (getX lab, getY lab) (end `plus2` offset)
 
   // Stella function for testing (TODO: Replace w/ most recent version)
   centerLabel: ([t1, arr]: [string, any], [t2, text1]: [string, any], w: number): Tensor => {
@@ -77,6 +77,14 @@ export const constrDict = {
         // HACK: report errors systematically
         throw new Error(`${shapeType} doesn't have a minSize`);
     }
+  },
+
+  at: ([t1, s1]: [string, any], [t2, s2]: [string, any]) => {
+    return squaredDifference(s1.x.contents, s2.x.contents).add(squaredDifference(s1.y.contents, s2.y.contents))
+  },
+
+  sameHeight: ([t1, s1]: [string, any], [t2, s2]: [string, any]) => {
+    return squaredDifference(s1.h.contents, s2.h.contents);
   },
 
   contains: (
